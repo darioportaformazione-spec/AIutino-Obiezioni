@@ -131,7 +131,7 @@ details[open] summary{border-bottom:1px solid #ddd}
     <div class="book-icon">▱</div>
     <div>
       <h2>AIutino - Capitoli 4/5 e Obiezioni</h2>
-      <p class="intro">Dalla <strong>proposta alla firma</strong>. Allenati a gestire le obiezioni con il <strong>Metodo del Tribunale</strong>, PROPONGO → DIFENDO → SCENDO e le <strong>4 Carezze</strong>.</p>
+      <p class="intro">Dalla <strong>proposta alla firma</strong>. Allenati a gestire l’obiezione di <strong>prezzo</strong> e il <strong>ci devo pensare</strong>.</p>
     </div>
   </div>
 
@@ -170,11 +170,11 @@ details[open] summary{border-bottom:1px solid #ddd}
   <div class="card blue">
     <div class="row"><div class="small-icon">?</div><div>
       <label>OBIEZIONE DA ALLENARE</label>
-      <span class="help">Scegli l'obiezione che vuoi allenare.</span>
+      <span class="help">Scegli una delle tre famiglie di obiezione.</span>
     </div></div>
     <div class="options">
-      <label class="option active"><input type="radio" name="obiezione" value="2" checked><strong>1 — PREZZO</strong><span>«COSTA TROPPO» · PROPONGO → DIFENDO → SCENDO</span></label>
-      <label class="option"><input type="radio" name="obiezione" value="3"><strong>2 — RIMANDO</strong><span>«CI DEVO PENSARE» · Metodo delle 4 Carezze</span></label>
+      <label class="option active"><input type="radio" name="obiezione" value="1" checked><strong>1 — PREZZO</strong><span>PROPONGO → DIFENDO → SCENDO</span></label>
+      <label class="option"><input type="radio" name="obiezione" value="2"><strong>2 — CI DEVO PENSARE</strong><span>Obiezione di rimando — 4 Carezze</span></label>
     </div>
   </div>
 
@@ -199,22 +199,13 @@ details[open] summary{border-bottom:1px solid #ddd}
 </div>
 
 <script>
-const template = `# AIutino — SIMULAZIONE PROPOSTA, OBIEZIONE E FIRMA
-
-Agisci come un FORMATORE COMMERCIALE ESPERTO.
+const template = `AGISCI COME UN FORMATORE COMMERCIALE ESPERTO.
 
 Crea una SIMULAZIONE COMMERCIALE COMPLETA E AUTONOMA, dalla PROPOSTA fino alla FIRMA, alla decisione positiva oppure alla conclusione della trattativa.
 
-La simulazione deve funzionare per QUALSIASI VENDITORE, SETTORE, PRODOTTO O SERVIZIO.
+La simulazione deve funzionare per QUALSIASI VENDITORE, QUALSIASI SETTORE, QUALSIASI PRODOTTO O SERVIZIO.
 
-NON fare una simulazione interattiva.
-NON chiedere al venditore cosa vuole rispondere.
-NON interrompere la simulazione per chiedere conferme.
-Costruisci TU tutta la simulazione dall'inizio alla fine utilizzando esclusivamente i dati iniziali forniti.
-
---------------------------------------------------
 DATI INIZIALI DELLA TRATTATIVA
---------------------------------------------------
 
 IO:
 [IO]
@@ -231,98 +222,40 @@ PROPOSTA:
 OBIEZIONE DA ALLENARE:
 [OBIEZIONE]
 
---------------------------------------------------
 REGOLE GENERALI
---------------------------------------------------
 
-La simulazione deve essere completa, realistica e coerente.
+La simulazione è completa e autonoma.
+Non chiedere al venditore cosa vuole fare dopo ogni battuta.
+Non interrompere la simulazione per chiedere conferme.
+Non inventare i dati iniziali: utilizza esclusivamente quelli inseriti nei campi.
+Non inventare esigenze, caratteristiche, numeri o risultati non forniti.
+Il cliente deve comportarsi come un cliente reale: può essere dubbioso, scettico, fare domande, opporsi e non essere immediatamente convinto.
+Il cliente non deve facilitare artificialmente la vendita.
 
-NON inventare dati iniziali.
-NON inventare esigenze diverse da quella indicata.
-NON inventare caratteristiche del prodotto o servizio.
-NON cambiare arbitrariamente la proposta.
-
-La proposta deve essere coerente con l'esigenza emersa.
-
-Il cliente deve comportarsi come un cliente reale: può essere interessato, dubbioso, scettico, fare domande, opporsi e non essere immediatamente convinto.
-
-Il cliente NON deve facilitare artificialmente la vendita.
-
-La simulazione deve seguire questa logica:
-
-ESIGENZA EMERSA
-→ PROPOSTA
-→ PREZZO
-→ OBIEZIONE
-→ GESTIONE DELL'OBIEZIONE
-→ DECISIONE
-→ FIRMA / CONCLUSIONE
-
---------------------------------------------------
 REGOLA ASSOLUTA — NIENTE CONDIZIONALE
---------------------------------------------------
 
 Durante tutta la simulazione il venditore NON DEVE MAI UTILIZZARE IL CONDIZIONALE.
 
-NON UTILIZZARE:
-potrebbe, potremmo, sarebbe, dovrebbe, vorrebbe, potrei, sarebbe utile, potrebbe essere, se volesse, se potessimo, magari potremmo, forse sarebbe.
+NON UTILIZZARE: potrebbe, potremmo, sarebbe, dovrebbe, vorrebbe, potrei, sarebbe utile, potrebbe essere, se volesse, se potessimo, magari potremmo, forse sarebbe.
 
 UTILIZZARE IL PRESENTE E UN LINGUAGGIO DECISO:
+facciamo, partiamo, procediamo, le propongo, la soluzione è, questo serve a, l'obiettivo è, definiamo, fissiamo, inseriamo, rimandiamo.
 
-«Facciamo così.»
-«Partiamo.»
-«Procediamo.»
-«Le propongo questa soluzione.»
-«La soluzione è questa.»
-«Definiamo.»
-«Fissiamo.»
-«Inseriamo.»
-«Rimandiamo.»
+==================================================
+SE L'OBIEZIONE È DI PREZZO — «COSTA TROPPO»
+==================================================
 
---------------------------------------------------
-PRESENTAZIONE DELLA PROPOSTA
---------------------------------------------------
-
-Costruisci la presentazione partendo dall'ESIGENZA EMERSA.
-
-Il venditore deve collegare chiaramente:
-1. ciò che il cliente ha espresso;
-2. ciò che è emerso durante l'ascolto;
-3. la proposta;
-4. il motivo per cui la proposta risponde a quell'esigenza.
-
-La proposta deve essere concreta.
-
-NON trasformarla in una lista generica di caratteristiche.
-
---------------------------------------------------
-PRESENTAZIONE DEL PREZZO
---------------------------------------------------
-
-Il venditore presenta il prezzo in modo diretto e sicuro.
-
-Dopo aver pronunciato il prezzo:
-
-SILENZIO.
-
-NON chiedere:
-«Cosa ne pensa?»
-
-NON svalutare preventivamente il prezzo.
-NON chiedere scusa per il prezzo.
-NON giustificare immediatamente il prezzo prima che emerga un'obiezione.
-
---------------------------------------------------
-OBIEZIONE DI PREZZO — «COSTA TROPPO»
---------------------------------------------------
-
-Utilizza esclusivamente il metodo:
+Utilizza ESCLUSIVAMENTE il metodo:
 
 PROPONGO → DIFENDO → SCENDO
 
+Non introdurre altre famiglie di obiezione.
+Non trasformare «costa troppo» in «ci devo pensare».
+Non passare successivamente alla gestione del rimando.
+
 ### 1. PROPONGO
 
-Dopo il prezzo e il silenzio, il cliente dice:
+Dopo la presentazione della proposta, il prezzo e il SILENZIO, il cliente dice:
 
 «Costa troppo.»
 
@@ -332,69 +265,88 @@ Il venditore risponde:
 
 Mostra la risposta realistica del cliente.
 
-Se il cliente conferma che la soluzione interessa, passa a DIFENDO.
-
 ### 2. DIFENDO
 
-NON difendere semplicemente il prezzo.
+Il venditore NON deve difendere semplicemente il prezzo.
 
-Difendi la CREDIBILITÀ e il VALORE della proposta.
+Deve difendere la propria credibilità e il valore della proposta.
 
-Riporta l'attenzione dal costo al valore e alle conseguenze economiche della soluzione.
+Deve riportare l'attenzione dal costo al valore e a ciò che significa per il cliente risolvere il problema o raggiungere l'obiettivo.
 
-Utilizza, quando è coerente con il settore, il LIFE TIME VALUE considerando:
+Utilizza, quando coerente con il settore, il LIFE TIME VALUE:
 
 - valore medio di una vendita;
-- persone portate da un cliente;
+- quante persone porta un cliente;
 - altri prodotti o servizi acquistati;
-- frequenza di acquisto;
+- frequenza d'acquisto;
 - durata della relazione;
 - passaparola.
 
 NON inventare numeri.
-
-Se i dati economici non sono disponibili, costruisci il ragionamento senza inventare cifre.
+Se i numeri non sono disponibili, lavora con domande e ragionamenti qualitativi.
 
 ### 3. SCENDO
 
-Se il cliente continua a sostenere che il prezzo è troppo alto, NON svendere.
+Se il cliente continua a sostenere che il prezzo è troppo alto, il venditore SCENDE senza svendere.
 
-SCENDERE significa POSTICIPARE alcuni elementi importanti ma NON DETERMINANTI, mantenendo gli elementi necessari per raggiungere l'obiettivo del cliente.
+SCENDERE significa POSTICIPARE alcuni elementi importanti ma NON DETERMINANTI, mantenendo ciò che serve per raggiungere l'obiettivo emerso.
 
 Logica:
 
 NON TOGLIERE A CASO → POSTICIPARE CIÒ CHE NON È DETERMINANTE.
 
-NON abbassare semplicemente il prezzo senza modificare ciò che viene proposto.
+DOPO SCENDO SI VA IN CHIUSURA.
+
+Questa regola è ASSOLUTA:
+
+PROPONGO → DIFENDO → SCENDO → CHIUSURA.
+
+NON aggiungere altre obiezioni.
+NON aprire la strada «ci devo pensare».
+NON continuare con altre tecniche di gestione delle obiezioni.
+
+Il venditore accompagna il cliente alla decisione finale e alla firma, oppure alla conclusione della trattativa se il cliente decide di non procedere.
+
+==================================================
+SE L'OBIEZIONE È DI RIMANDO — «CI DEVO PENSARE»
+==================================================
+
+Utilizza il metodo delle 4 CAREZZE, ma sviluppa la simulazione seguendo QUESTO ORDINE PRECISO.
+
+La simulazione deve partire PRIMA dal tema:
+
+TIMORE / PAURA / INCERTEZZA.
+
+Solo successivamente, alla fine della simulazione principale, proponi al lettore di vedere anche le altre due possibili versioni:
+
+1. NON MI SONO SPIEGATO IN MODO CHIARISSIMO
+2. PREZZO
+
+NON sviluppare prima queste due varianti.
 
 --------------------------------------------------
-OBIEZIONE DI RIMANDO — «CI DEVO PENSARE»
+PARTENZA — «CI DEVO PENSARE»
 --------------------------------------------------
 
-Utilizza il metodo delle:
-
-4 CAREZZE
-
-La stessa famiglia comprende:
+Il cliente dice:
 
 «Ci devo pensare.»
-«Devo sentire il commercialista.»
-«Devo parlarne con il socio.»
-«Ne devo parlare con mia moglie.»
-«Facciamo dopo le feste.»
-«Ci sentiamo più avanti.»
 
-### QUANDO IL CLIENTE DICE «CI DEVO PENSARE»
-
-Parti direttamente da:
+Il venditore parte direttamente con:
 
 «Sì, certo, capisco, ci pensi pure. Alcuni dei miei clienti che hanno detto inizialmente che ci dovevano pensare lo hanno fatto per uno di questi motivi: non mi ero spiegato in modo chiarissimo, timore o incertezza, prezzo. Quale delle tre in questo caso?»
 
-Poi sviluppa la risposta del cliente.
+La simulazione deve sviluppare come prima strada:
 
-### 1. IN ACCORDO
+TIMORE / PAURA / INCERTEZZA.
 
-Quando appropriato:
+--------------------------------------------------
+1. IN ACCORDO
+--------------------------------------------------
+
+Accogli il rimando senza combatterlo.
+
+Formula:
 
 «Ci mancherebbe altro, si prenda tutto il tempo che le serve, faccia tutte le considerazioni e ci pensi tranquillamente.»
 
@@ -402,93 +354,159 @@ Oppure:
 
 «Faccia pure, si prenda il tempo che le serve.»
 
-NON utilizzare tutte le varianti insieme.
+Non utilizzare tutte le varianti insieme.
 
-### 2. RAFFINARE IL RIMANDO
+--------------------------------------------------
+2. RAFFINARE IL RIMANDO
+--------------------------------------------------
 
 Utilizza QUALI:
 
 «QUALI elementi è meglio che io le chiarisca o le approfondisca?»
 
-La parola fondamentale è QUALI.
+Adatta la domanda alla persona eventualmente coinvolta: socio, commercialista, moglie/marito o altra persona.
 
-Adatta la domanda alla persona coinvolta: socio, commercialista, moglie/marito o altra persona.
+--------------------------------------------------
+3. DEFINIRE UNA SCADENZA
+--------------------------------------------------
 
-NON utilizzare domande generiche come:
-«Ci sono elementi che vuole chiarire?»
+Quando è coerente con la risposta del cliente, definisci giorno, orario e obiettivo del successivo contatto.
 
-### 3. DEFINIRE UNA SCADENZA
-
-Trasforma il rimando generico in un momento preciso di ricontatto.
-
-Definisci giorno, orario e obiettivo del successivo contatto.
-
-Quando possibile usa una domanda binaria:
+Preferibilmente usa una domanda binaria:
 
 «Preferisce martedì 17 alle 16.00 oppure giovedì 19 alle 15.00?»
 
 Idealmente il nuovo contatto avviene non prima di 3 giorni e non oltre 10 giorni.
 
-Se il cliente non accetta di fissare un momento preciso, cerca di capire perché.
+--------------------------------------------------
+4. TIMORE / PAURA / INCERTEZZA
+--------------------------------------------------
 
-### 4. SCOPRIRE IL VERO MOTIVO
+Questa è la PRIMA E PRINCIPALE VERSIONE da sviluppare quando il cliente dice «ci devo pensare».
 
-Le tre possibilità sono:
+Il venditore deve comprendere il timore del cliente senza banalizzarlo.
 
-1. NON MI SONO SPIEGATO IN MODO CHIARISSIMO
-2. TIMORE / INCERTEZZA
-3. PREZZO
+Utilizza:
 
-Se risponde PREZZO:
-passa a PROPONGO → DIFENDO → SCENDO.
+AWAY FROM → GO TO
 
-Se risponde NON MI SONO SPIEGATO IN MODO CHIARISSIMO:
-il venditore chiarisce la proposta, diventa più preciso e utilizza, quando disponibili, numeri, statistiche, esempi e casi significativi.
+cioè:
 
-Se risponde TIMORE / INCERTEZZA:
-il venditore lavora sulla paura e sull'incertezza, riportando il cliente da AWAY FROM → GO TO, cioè da ciò che teme verso ciò che desidera ottenere.
+- da ciò che il cliente teme;
+- verso ciò che il cliente vuole ottenere.
+
+Il venditore deve riportare attenzione al desiderio, all'obiettivo e alle conseguenze positive della decisione.
 
 Può utilizzare il LIFE TIME VALUE quando è coerente.
 
-Può inoltre utilizzare il controesempio:
+Può utilizzare il controesempio:
 
 «Sì, capisco. Ma, pensandoci un momento, ti ricordi qualche altra volta in cui una cosa ti sembrava difficile, ne avevi timore, e poi invece sei riuscito a superarla e ne sei stato orgoglioso?»
 
-Dopo aver ridotto il timore, il venditore accompagna il cliente verso una decisione concreta.
+La gestione deve essere concreta, umana e progressiva.
+
+Al termine della gestione del timore, il venditore accompagna il cliente verso la decisione e la chiusura.
 
 --------------------------------------------------
-REGOLE FINALI
+DOPO LA VERSIONE TIMORE — LE ALTRE DUE VERSIONI
 --------------------------------------------------
 
-La simulazione deve essere SCRITTA COMPLETAMENTE.
+Dopo aver completato la simulazione principale sul TIMORE / PAURA / INCERTEZZA, NON sviluppare automaticamente le altre due varianti.
 
-Distingui sempre chiaramente:
+Concludi la simulazione principale.
 
-VENDITORE:
-CLIENTE:
+Poi aggiungi una breve sezione:
 
-Non fermarti dopo la prima obiezione.
+«Se vuoi, posso mostrarti anche le altre due versioni del “ci devo pensare”:»
 
-Non trasformare la simulazione in un esercizio interattivo.
+1. «Non mi sono spiegato in modo chiarissimo»
+2. «Prezzo»
 
-NON aggiungere valutazioni finali.
-NON assegnare voti.
-NON dare pagelle.
-NON indicare punteggi.
-NON aggiungere «cosa hai fatto bene» o «cosa devi migliorare».
+Questa parte serve a offrire al lettore la possibilità di vedere separatamente le altre due modalità.
 
-La simulazione termina con:
-- FIRMA;
-- ACCORDO CONCRETO;
-- oppure MANCATA CONCLUSIONE motivata dal comportamento del cliente.
+--------------------------------------------------
+VERSIONE ALTERNATIVA 1 — NON MI SONO SPIEGATO IN MODO CHIARISSIMO
+--------------------------------------------------
 
-L'obiettivo è mostrare COME SI GESTISCE PROFESSIONALMENTE L'OBIEZIONE fino alla decisione finale.`;
+Se il lettore sceglie questa versione, sviluppa una simulazione separata.
+
+Il venditore deve rendere la proposta:
+- più chiara;
+- più precisa;
+- più concreta.
+
+Utilizza, quando disponibili:
+- numeri;
+- statistiche;
+- esempi;
+- casi significativi;
+- elementi concreti della proposta.
+
+NON inventare dati.
+
+L'obiettivo è eliminare l'incertezza informativa e accompagnare il cliente alla decisione.
+
+--------------------------------------------------
+VERSIONE ALTERNATIVA 2 — PREZZO
+--------------------------------------------------
+
+Se il lettore sceglie questa versione, passa alla gestione:
+
+PROPONGO → DIFENDO → SCENDO → CHIUSURA.
+
+Non continuare con altre obiezioni.
+
+--------------------------------------------------
+REGOLE FONDAMENTALI
+--------------------------------------------------
+
+1. Non inventare l'esigenza.
+2. Non inventare dati non forniti.
+3. Non aggiungere il campo Vision e non richiederla come dato iniziale.
+4. Non introdurre una terza famiglia di obiezione.
+5. Non introdurre obiezioni diverse da quelle richieste.
+6. Non svendere.
+7. Non utilizzare il condizionale.
+8. Nel PREZZO: PROPONGO → DIFENDO → SCENDO → CHIUSURA.
+9. Nel «CI DEVO PENSARE»: prima TIMORE / PAURA / INCERTEZZA.
+10. Solo alla fine della versione TIMORE proponi al lettore le altre due versioni: NON MI SONO SPIEGATO IN MODO CHIARISSIMO e PREZZO.
+11. La simulazione deve essere realistica e completa.
+12. Distingui sempre chiaramente VENDITORE e CLIENTE.
+13. Non dare voti, punteggi o pagelle.
+14. Non aggiungere una valutazione finale.
+
+STRUTTURA DELLA SIMULAZIONE
+
+## SCENARIO
+Breve introduzione.
+
+## CLIENTE
+Battuta del cliente.
+
+## VENDITORE
+Risposta del venditore secondo il metodo.
+
+## CLIENTE
+Reazione realistica.
+
+## VENDITORE
+Risposta successiva.
+
+Continua fino alla conclusione della trattativa.
+
+La simulazione arriva fino a firma, accordo oppure mancata conclusione motivata dal comportamento del cliente.
+
+Nel caso «COSTA TROPPO», dopo SCENDO vai direttamente in CHIUSURA.
+
+Nel caso «CI DEVO PENSARE», sviluppa prima la versione TIMORE / PAURA / INCERTEZZA; solo dopo la conclusione proponi al lettore le altre due versioni.
+
+La simulazione termina con la conclusione della trattativa.`;
 
 
 const fields={io:document.getElementById('io'),cliente:document.getElementById('cliente'),esigenza:document.getElementById('esigenza'),proposta:document.getElementById('proposta')};
 const preview=document.getElementById('preview');
 const btn=document.getElementById('copyBtn');
-function selectedObiezione(){const v=document.querySelector('input[name="obiezione"]:checked').value;return v==='2'?'1 — OBIEZIONE DI PREZZO — «COSTA TROPPO» — PROPONGO → DIFENDO → SCENDO':'2 — OBIEZIONE DI RIMANDO — «CI DEVO PENSARE» — METODO DELLE 4 CAREZZE'}
+function selectedObiezione(){const v=document.querySelector('input[name="obiezione"]:checked').value;return v==='1'?'OBIEZIONE DI PREZZO — «COSTA TROPPO»':'OBIEZIONE DI RIMANDO — «CI DEVO PENSARE»'}
 function getPrompt(){return template.replaceAll('[IO]',fields.io.value.trim()||'[DA INSERIRE]').replaceAll('[POTENZIALE_CLIENTE]',fields.cliente.value.trim()||'[DA INSERIRE]').replaceAll('[ESIGENZA]',fields.esigenza.value.trim()||'[DA INSERIRE]').replaceAll('[PROPOSTA]',fields.proposta.value.trim()||'[DA INSERIRE]').replaceAll('[OBIEZIONE]',selectedObiezione())}
 function refresh(){preview.textContent=getPrompt()}
 Object.values(fields).forEach(el=>el.addEventListener('input',refresh));
