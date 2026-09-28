@@ -2,796 +2,184 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>AIutino - Simulazione Commerciale Completa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIutino - Capitoli 4/5 e Obiezioni | Dario Porta</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#ece9e3;color:#171717;font-family:Arial,Helvetica,sans-serif}
+.page{width:min(720px,calc(100% - 28px));margin:18px auto;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 14px 45px rgba(0,0,0,.11)}
+.hero{position:relative;min-height:205px;padding:25px 30px 18px;background:linear-gradient(115deg,#fffdf9 0%,#f7eee0 100%);overflow:hidden}
+.hero:after{content:"";position:absolute;left:-70px;bottom:-62px;width:370px;height:115px;border-radius:50%;background:#d91f16;transform:rotate(-4deg)}
+.author{position:relative;z-index:2;color:#d91f16;font-weight:800;letter-spacing:6px;font-size:11px}
+.edition{display:inline-block;border-top:2px solid #d91f16;border-bottom:2px solid #d91f16;padding:4px 0;margin-top:8px;font-size:10px;font-weight:800;color:#d91f16}
+.hero h1{position:relative;z-index:2;margin:10px 175px 4px 0;font-size:32px;line-height:.94;letter-spacing:-1.5px}
+.hero h1 span{color:#d91f16;display:block}
+.subtitle{position:relative;z-index:2;margin:7px 175px 0 0;font-size:11px;line-height:1.35;max-width:410px}
+.cover{position:absolute;z-index:3;right:24px;top:20px;width:116px;transform:rotate(2deg);filter:drop-shadow(0 8px 9px rgba(0,0,0,.2))}
+.main{padding:22px 24px 30px}
+.title-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:15px}
+.title-icon{width:31px;height:31px;border-radius:8px;background:#fff0ee;border:1px solid #f1aaa5;color:#d91f16;display:flex;align-items:center;justify-content:center;font-weight:900}
+h2{margin:0;font-size:19px;line-height:1.1}
+.intro{font-size:11px;color:#666;margin-top:3px}
+.card{border-radius:13px;padding:10px 12px;margin:7px 0;border:1px solid #e2e2e2}
+.card.blue{background:#eef6ff} .card.green{background:#effaf3} .card.mint{background:#eefaf7} .card.orange{background:#fff4e5}
+.label{font-size:11px;font-weight:900;display:flex;gap:7px;align-items:center}
+.label .dot{width:18px;height:18px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;background:#fff;font-size:10px}
+.hint{font-size:8px;color:#777;margin:2px 0 5px 25px}
+textarea,input{width:100%;border:1px solid #d8d8d8;border-radius:6px;background:#fff;padding:8px;font:11px Arial;outline:none}
+textarea{min-height:48px;resize:vertical}
+input:focus,textarea:focus{border-color:#d91f16;box-shadow:0 0 0 2px rgba(217,31,22,.08)}
+.objection{background:#eef6ff;border-radius:13px;padding:12px;margin-top:8px}
+.ob-title{font-weight:900;font-size:11px;margin-bottom:8px;display:flex;gap:7px;align-items:center}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.option{position:relative}
+.option input{position:absolute;opacity:0;pointer-events:none}
+.option label{display:block;border:2px solid #ddd;border-radius:9px;padding:10px;background:#fff;font-weight:900;font-size:10px;cursor:pointer;min-height:50px}
+.option input:checked+label{border-color:#d91f16;background:#fff7f6}
+.option small{display:block;color:#777;font-weight:600;margin-top:4px}
+.prepare{margin-top:10px;width:100%;border:0;border-radius:7px;background:#e51b16;color:white;font-weight:900;font-size:12px;padding:12px;cursor:pointer}
+.prepare:active{transform:translateY(1px)}
+.after{background:#fff7f5;border:1px solid #f0cbc7;border-radius:13px;padding:11px 12px;margin-top:10px}
+.after-title{color:#d91f16;font-weight:900;font-size:13px;margin-bottom:8px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.step{font-size:9px;line-height:1.25}
+.step b{display:block;font-size:9px;margin-bottom:3px}
+.num{display:inline-flex;width:20px;height:20px;border-radius:50%;background:#d91f16;color:#fff;align-items:center;justify-content:center;margin-right:4px;font-weight:900}
+.prompt-toggle{margin-top:10px;border:0;width:100%;background:#f1f2f4;padding:13px;text-align:left;border-radius:7px;font-size:12px;font-weight:900;cursor:pointer}
+.prompt-box{display:none;background:#fafafa;border:1px solid #ddd;border-top:0;border-radius:0 0 8px 8px;padding:12px}
+.prompt-box pre{white-space:pre-wrap;word-break:break-word;margin:0;font:10px/1.45 Arial;color:#222;max-height:560px;overflow:auto}
+.note{font-size:9px;color:#777;margin-top:10px}
+.copied{background:#16803c!important}
+@media(max-width:600px){
+.page{width:calc(100% - 12px);margin:6px auto;border-radius:18px}
+.hero{min-height:190px;padding:20px 18px}
+.hero h1{font-size:25px;margin-right:125px}
+.subtitle{margin-right:125px}
+.cover{width:92px;right:15px;top:25px}
+.main{padding:16px}
+.steps{grid-template-columns:1fr}
+.options{grid-template-columns:1fr}
+}
+</style>
 </head>
-
 <body>
-
-<h1>AIUTINO — SIMULAZIONE COMMERCIALE COMPLETA E AUTONOMA</h1>
-
-<h2>ISTRUZIONE PRINCIPALE</h2>
-
-<p>
-AGISCI COME UN VENDITORE ESPERTO.
-</p>
-
-<p>
-Crea una <strong>SIMULAZIONE COMMERCIALE COMPLETA E AUTONOMA</strong>,
-dalla <strong>PROPOSTA</strong> fino alla <strong>FIRMA</strong>,
-alla <strong>DECISIONE POSITIVA</strong> oppure alla
-<strong>CONCLUSIONE DELLA TRATTATIVA</strong>.
-</p>
-
-<p>
-La simulazione deve funzionare per <strong>QUALSIASI VENDITORE,
-QUALSIASI SETTORE, QUALSIASI PRODOTTO O SERVIZIO</strong>.
-</p>
-
-
-<hr>
-
-<h2>DATI INIZIALI DELLA TRATTATIVA</h2>
-
-<p><strong>IO:</strong><br>
-Dario Porta, consulente digitale
-</p>
-
-<p><strong>POTENZIALE CLIENTE:</strong><br>
-Fiorista Rosy
-</p>
-
-<p><strong>ESIGENZA EMERSA:</strong><br>
-Composizioni floreali per matrimoni
-</p>
-
-<p><strong>PROPOSTA:</strong><br>
-Google Ads, presenza digitale, FB Presence
-</p>
-
-<p><strong>OBIEZIONE DA ALLENARE:</strong><br>
-OBIEZIONE DI RIMANDO — «CI DEVO PENSARE»
-</p>
-
-
-<hr>
-
-<h2>REGOLE GENERALI</h2>
-
-<ul>
-<li>La simulazione è completa e autonoma.</li>
-<li>Non chiedere al venditore cosa vuole fare dopo ogni battuta.</li>
-<li>Non interrompere la simulazione per chiedere conferme.</li>
-<li>Non inventare i dati iniziali: utilizza esclusivamente quelli inseriti nei campi.</li>
-<li>Non inventare esigenze, caratteristiche, numeri o risultati non forniti.</li>
-<li>Il cliente deve comportarsi come un cliente reale: può essere dubbioso, scettico, fare domande, opporsi e non essere immediatamente convinto.</li>
-<li>Il cliente non deve facilitare artificialmente la vendita.</li>
-<li>La simulazione deve arrivare fino alla firma, all'accordo oppure alla conclusione della trattativa se il cliente decide di non procedere.</li>
-<li>Distingui sempre chiaramente <strong>VENDITORE</strong> e <strong>CLIENTE</strong>.</li>
-<li>Non dare voti, punteggi o pagelle.</li>
-<li>Non aggiungere una valutazione finale.</li>
-<li>Indica tra parentesi quadre solo le tecniche realmente fondamentali utilizzate.</li>
-</ul>
-
-
-<hr>
-
-<h2>REGOLA ASSOLUTA — NIENTE CONDIZIONALE</h2>
-
-<p>
-Durante tutta la simulazione il venditore
-<strong>NON DEVE MAI UTILIZZARE IL CONDIZIONALE</strong>.
-</p>
-
-<p><strong>NON UTILIZZARE:</strong></p>
-
-<p>
-potrebbe, potremmo, sarebbe, dovrebbe, vorrebbe, potrei,
-sarebbe utile, potrebbe essere, se volesse, se potessimo,
-magari potremmo, forse sarebbe.
-</p>
-
-<p><strong>UTILIZZARE:</strong></p>
-
-<p>
-facciamo, partiamo, procediamo, le propongo, la soluzione è,
-questo serve a, l'obiettivo è, definiamo, fissiamo, inseriamo,
-rimandiamo.
-</p>
-
-
-<hr>
-
-<h2>PRIMA DI GESTIRE L'OBIEZIONE — RIFLESSIONE SULLA PROPOSTA</h2>
-
-<p>
-Prima di iniziare la gestione dell'obiezione scelta,
-fai una <strong>BREVE RIFLESSIONE SULLA PROPOSTA</strong>.
-</p>
-
-<p>
-Ricorda esclusivamente questi tre principi:
-</p>
-
-<h3>1. NIENTE CONDIZIONALE</h3>
-
-<p>
-La proposta viene presentata con linguaggio deciso,
-utilizzando il presente e mai il condizionale.
-</p>
-
-<h3>2. PROPOSTA SCENDIBILE</h3>
-
-<p>
-La proposta deve essere costruita in modo da poter
-<strong>SCENDERE SENZA SVENDERE</strong>.
-</p>
-
-<p>
-Il venditore protegge gli elementi
-<strong>DETERMINANTI</strong> per raggiungere l'obiettivo
-e può invece posticipare oppure sacrificare gli elementi
-<strong>IMPORTANTI MA NON DETERMINANTI</strong>.
-</p>
-
-<p>
-La scelta non deve mai essere presentata come:
-<strong>«fare tutto oppure non fare nulla»</strong>.
-</p>
-
-<p>
-La proposta mantiene la direzione verso l'obiettivo anche
-quando alcuni elementi vengono posticipati o sacrificati.
-</p>
-
-<h3>3. SUPPORTO VISIVO</h3>
-
-<p>
-La proposta deve essere accompagnata da un
-<strong>SUPPORTO VISIVO</strong>: schema, disegno, tabella,
-mappa, carta e penna, immagini, esempi o altro strumento
-coerente con il settore.
-</p>
-
-<p>
-Il supporto visivo deve rendere immediatamente comprensibile
-il percorso proposto.
-</p>
-
-<p>
-Questa riflessione deve essere <strong>BREVE</strong> e non deve
-trasformarsi in una lezione teorica.
-</p>
-
-
-<hr>
-
-<h2>REGOLA FONDAMENTALE — LE DUE FAMIGLIE DI OBIezIONE SONO SEPARATE</h2>
-
-<p>
-<strong>NON CONFONDERE MAI LE DUE GESTIONI.</strong>
-</p>
-
-<p>
-L'obiezione <strong>«COSTA TROPPO»</strong> utilizza esclusivamente:
-</p>
-
-<p>
-<strong>PROPONGO → DIFENDO → SCENDO → CHIUSURA</strong>
-</p>
-
-<p>
-L'obiezione <strong>«CI DEVO PENSARE»</strong> utilizza invece
-<strong>IL METODO DELLE TRE CAREZZE</strong>.
-</p>
-
-<p>
-<strong>PROPONGO → DIFENDO → SCENDO</strong> NON deve essere
-utilizzato nel percorso «CI DEVO PENSARE»,
-<strong>tranne nel caso in cui il cliente, scegliendo una delle
-tre carezze, dichiari esplicitamente che il motivo è il PREZZO.</strong>
-</p>
-
-
-<hr>
-
-<h2>SE L'OBIEZIONE È DI PREZZO — «COSTA TROPPO»</h2>
-
-<p>
-Utilizza <strong>ESCLUSIVAMENTE</strong>:
-</p>
-
-<h3>PROPONGO → DIFENDO → SCENDO → CHIUSURA</h3>
-
-<h3>1. PROPONGO</h3>
-
-<p>
-Dopo la presentazione della proposta, il prezzo e il silenzio,
-il cliente dice:
-</p>
-
-<p><strong>«Costa troppo.»</strong></p>
-
-<p>
-Il venditore risponde con un'accoglienza realistica e riconosce
-che le decisioni economiche vanno valutate con attenzione.
-</p>
-
-<p>
-Esempio:
-</p>
-
-<p>
-«Capisco. Oggi non si possono fare scelte avventate,
-bisogna stare attenti. Ma, per un momento, lasci da parte
-e non pensi al prezzo: quello che abbiamo visto le interessa?»
-</p>
-
-<h3>2. DIFENDO</h3>
-
-<p>
-Il venditore non difende semplicemente il prezzo.
-</p>
-
-<p>
-Difende la propria <strong>CREDIBILITÀ</strong> e il
-<strong>VALORE DELLA PROPOSTA</strong>.
-</p>
-
-<p>
-Riporta l'attenzione dal costo al valore e a ciò che significa
-per il cliente raggiungere l'obiettivo.
-</p>
-
-<p>
-Quando coerente, utilizza il <strong>LIFE TIME VALUE</strong>,
-considerando:
-</p>
-
-<ul>
-<li>valore medio di una vendita;</li>
-<li>quante persone porta un cliente;</li>
-<li>altri prodotti o servizi acquistati;</li>
-<li>frequenza d'acquisto;</li>
-<li>durata della relazione;</li>
-<li>passaparola.</li>
-</ul>
-
-<p>
-<strong>NON inventare numeri.</strong>
-Se i numeri non sono disponibili, utilizza domande e
-ragionamenti qualitativi.
-</p>
-
-<h3>3. SCENDO</h3>
-
-<p>
-Se il cliente continua a sostenere che il prezzo è troppo alto,
-il venditore <strong>SCENDE SENZA SVENDERE</strong>.
-</p>
-
-<p>
-Scendere significa:
-</p>
-
-<p>
-<strong>PROTEGGERE I DETERMINANTI → POSTICIPARE O SACRIFICARE I NON DETERMINANTI</strong>
-</p>
-
-<p>
-Il venditore spiega che non esiste soltanto la scelta tra
-fare tutto e non fare nulla.
-</p>
-
-<p>
-Individua ciò che è determinante e protegge quello.
-Gli elementi importanti ma non determinanti possono essere
-posticipati oppure sacrificati.
-</p>
-
-<h3>4. CHIUSURA</h3>
-
-<p>
-<strong>DOPO SCENDO SI VA DIRETTAMENTE IN CHIUSURA.</strong>
-</p>
-
-<p>
-Non aggiungere altre obiezioni.
-Non aprire altre strade.
-Non prendere un nuovo appuntamento per gestire il prezzo.
-</p>
-
-
-<hr>
-
-<h2>SE L'OBIEZIONE È DI RIMANDO — «CI DEVO PENSARE»</h2>
-
-<p>
-Utilizza il <strong>METODO DELLE TRE CAREZZE</strong>.
-</p>
-
-<p>
-<strong>ATTENZIONE:</strong>
-in questo percorso NON utilizzare automaticamente
-PROPONGO → DIFENDO → SCENDO.
-</p>
-
-<p>
-Il metodo delle Tre Carezze serve prima di tutto a
-<strong>IDENTIFICARE IL VERO MOTIVO</strong> del rimando.
-</p>
-
-
-<h2>LE TRE CAREZZE</h2>
-
-<ol>
-<li><strong>NON MI SONO SPIEGATO IN MODO CHIARISSIMO</strong></li>
-<li><strong>TIMORE / PAURA / INCERTEZZA</strong></li>
-<li><strong>PREZZO</strong></li>
-</ol>
-
-<p>
-La simulazione deve sviluppare <strong>PRIMA</strong>
-la versione:
-</p>
-
-<p>
-<strong>TIMORE / PAURA / INCERTEZZA</strong>
-</p>
-
-<p>
-Le altre due versioni NON devono essere sviluppate
-automaticamente.
-</p>
-
-<p>
-Devono essere proposte solo alla fine della simulazione principale.
-</p>
-
-
-<hr>
-
-<h2>PARTENZA — «CI DEVO PENSARE»</h2>
-
-<p>
-Il cliente dice:
-</p>
-
-<p><strong>«Ci devo pensare.»</strong></p>
-
-<p>
-Il venditore accoglie il rimando e spiega in modo naturale
-perché pone la domanda.
-</p>
-
-<p>
-Deve far comprendere al cliente che esistono
-<strong>TRE POSSIBILI MOTIVI</strong> e chiedergli di individuare
-quello che corrisponde realmente alla sua situazione.
-</p>
-
-<p>
-Utilizza una formulazione di questo tipo:
-</p>
-
-<p>
-«Sì, certo, capisco, si prenda tutto il tempo che le serve.
-Le chiedo solo una cosa: alcuni dei miei clienti che mi hanno
-detto inizialmente che ci dovevano pensare lo hanno fatto perché
-non mi ero spiegato in modo chiarissimo, oppure per un timore
-o un'incertezza, oppure per il prezzo.
-Quale delle tre sente più vicina alla sua situazione?»
-</p>
-
-<p>
-La domanda deve permettere al cliente di scegliere
-<strong>UNA DELLE TRE STRADE</strong>.
-</p>
-
-
-<hr>
-
-<h2>DOPO LA SCELTA DEL CLIENTE</h2>
-
-<p>
-Quando il cliente indica una delle tre cause:
-</p>
-
-<ul>
-<li>NON ripetere l'elenco delle tre possibilità;</li>
-<li>NON ripetere la domanda;</li>
-<li>NON chiedere nuovamente «quali elementi devo chiarire?»;</li>
-<li>entra direttamente nella gestione della causa scelta.</li>
-</ul>
-
-
-<hr>
-
-<h2>VERSIONE PRINCIPALE — TIMORE / PAURA / INCERTEZZA</h2>
-
-<p>
-Questa è la <strong>PRIMA VERSIONE DA SVILUPPARE</strong>.
-</p>
-
-<h3>1. IN ACCORDO</h3>
-
-<p>
-Accogli il rimando senza combatterlo.
-</p>
-
-<p>
-Esempio:
-</p>
-
-<p>
-«Ci mancherebbe altro, si prenda tutto il tempo che le serve,
-faccia tutte le considerazioni e ci pensi tranquillamente.»
-</p>
-
-<p>
-Oppure:
-</p>
-
-<p>
-«Faccia pure, si prenda il tempo che le serve.»
-</p>
-
-<p>
-Non utilizzare tutte le varianti insieme.
-</p>
-
-
-<h3>2. COMPRENDERE IL TIMORE</h3>
-
-<p>
-La conversazione diventa più
-<strong>CONFIDENZIALE, AMICHEVOLE E UMANA</strong>.
-</p>
-
-<p>
-Il venditore non mette il cliente sotto pressione.
-</p>
-
-<p>
-Deve comprendere cosa lo frena realmente.
-</p>
-
-<p>
-Può utilizzare una domanda come:
-</p>
-
-<p>
-«Mi dica una cosa molto semplicemente: qual è la cosa che
-le fa più paura?»
-</p>
-
-<p>
-Il venditore deve ascoltare la risposta e sviluppare
-la conversazione sulla paura realmente dichiarata dal cliente.
-</p>
-
-
-<h3>3. AWAY FROM → GO TO</h3>
-
-<p>
-Utilizza:
-</p>
-
-<p>
-<strong>AWAY FROM → GO TO</strong>
-</p>
-
-<p>
-<strong>AWAY FROM:</strong>
-porta alla luce ciò che il cliente teme.
-</p>
-
-<p>
-<strong>GO TO:</strong>
-riporta l'attenzione verso ciò che il cliente vuole ottenere,
-verso l'esigenza emersa e verso la direzione desiderata.
-</p>
-
-<p>
-Non inventare bisogni o obiettivi.
-Utilizza esclusivamente ciò che emerge dalla conversazione
-e dai dati iniziali.
-</p>
-
-
-<h3>4. LIFE TIME VALUE</h3>
-
-<p>
-Il LIFE TIME VALUE può essere utilizzato quando è coerente.
-</p>
-
-<p>
-<strong>NON inventare numeri.</strong>
-</p>
-
-<p>
-Se i dati non sono disponibili, utilizza esclusivamente
-ragionamenti qualitativi e domande.
-</p>
-
-
-<h3>5. CONTROESEMPIO</h3>
-
-<p>
-Quando coerente, può essere utilizzato il controesempio:
-</p>
-
-<p>
-«Sì, capisco. Ma, pensandoci un momento, ti ricordi qualche
-altra volta in cui una cosa ti sembrava difficile, ne avevi
-timore, e poi invece sei riuscito a superarla e ne sei stato
-orgoglioso?»
-</p>
-
-<p>
-Il controesempio deve essere utilizzato solo se realmente
-coerente con la conversazione.
-</p>
-
-
-<h3>6. CHIUSURA</h3>
-
-<p>
-Se il cliente supera il timore e dichiara di essere pronto,
-il venditore deve accompagnarlo <strong>DIRETTAMENTE ALLA DECISIONE
-E ALLA CHIUSURA</strong>.
-</p>
-
-<p>
-La sequenza è:
-</p>
-
-<p>
-<strong>TIMORE → CHIARIMENTO → DECISIONE → CHIUSURA</strong>
-</p>
-
-<p>
-<strong>NON prendere automaticamente un nuovo appuntamento.</strong>
-</p>
-
-<p>
-Se il cliente dichiara esplicitamente di non essere ancora pronto,
-la simulazione può concludersi senza forzare artificialmente
-la firma.
-</p>
-
-
-<hr>
-
-<h2>DOPO LA VERSIONE TIMORE</h2>
-
-<p>
-Dopo aver completato e concluso la simulazione principale,
-NON sviluppare automaticamente le altre due versioni.
-</p>
-
-<p>
-Concludi la simulazione principale e poi scrivi:
-</p>
-
-<p>
-<strong>
-«Se vuoi, posso mostrarti anche le altre due versioni del
-“ci devo pensare”:
-</strong>
-</p>
-
-<ol>
-<li><strong>Non mi sono spiegato in modo chiarissimo</strong></li>
-<li><strong>Prezzo</strong></li>
-</ol>
-
-
-<hr>
-
-<h2>VERSIONE ALTERNATIVA 1 — NON MI SONO SPIEGATO IN MODO CHIARISSIMO</h2>
-
-<p>
-Se il lettore sceglie questa versione, sviluppa una
-<strong>SIMULAZIONE SEPARATA</strong>.
-</p>
-
-<p>
-Il focus è esclusivamente la
-<strong>CHIAREZZA DELLA PROPOSTA</strong>.
-</p>
-
-<p>
-Il venditore rende la proposta:
-</p>
-
-<ul>
-<li>più chiara;</li>
-<li>più precisa;</li>
-<li>più concreta.</li>
-</ul>
-
-<p>
-Utilizza, quando disponibili:
-</p>
-
-<ul>
-<li>numeri;</li>
-<li>statistiche;</li>
-<li>esempi;</li>
-<li>casi significativi;</li>
-<li>elementi concreti della proposta.</li>
-</ul>
-
-<p>
-<strong>NON inventare dati.</strong>
-</p>
-
-<p>
-Se il cliente, dopo i chiarimenti, è sufficientemente informato
-e pronto a decidere, il venditore chiude direttamente.
-</p>
-
-<p>
-Se invece emerge una reale necessità di ulteriori spiegazioni,
-esempi, numeri o approfondimenti che richiedono tempo,
-il venditore può prendere un nuovo appuntamento.
-</p>
-
-<p>
-Il nuovo appuntamento deve avere un obiettivo preciso:
-</p>
-
-<p>
-<strong>
-CHIARIRE MEGLIO LA PROPOSTA ATTRAVERSO ESEMPI,
-ELEMENTI CONCRETI, NUMERI O SPIEGAZIONI DISPONIBILI.
-</strong>
-</p>
-
-<p>
-<strong>
-NON prendere un appuntamento semplicemente perché il cliente
-«ci deve pensare».
-</strong>
-</p>
-
-
-<hr>
-
-<h2>VERSIONE ALTERNATIVA 2 — PREZZO</h2>
-
-<p>
-<strong>SOLO IN QUESTA STRADA</strong>, quando il cliente dichiara
-che il motivo del rimando è il prezzo, si passa alla gestione:
-</p>
-
-<p>
-<strong>PROPONGO → DIFENDO → SCENDO → CHIUSURA</strong>
-</p>
-
-<p>
-Questa è l'unica situazione all'interno del
-«CI DEVO PENSARE» nella quale viene utilizzata
-la struttura del prezzo.
-</p>
-
-<p>
-Non trasformare nuovamente il prezzo in
-«ci devo pensare».
-</p>
-
-<p>
-Non prendere un nuovo appuntamento per gestire il prezzo.
-</p>
-
-<p>
-Dopo <strong>SCENDO</strong> vai direttamente in
-<strong>CHIUSURA</strong>.
-</p>
-
-
-<hr>
-
-<h2>REGOLE ASSOLUTE DI CONTROLLO</h2>
-
-<ol>
-<li>Non inventare l'esigenza.</li>
-<li>Non inventare dati.</li>
-<li>Non aggiungere il campo Vision come dato iniziale.</li>
-<li>Prima delle obiezioni fai una breve riflessione sulla proposta.</li>
-<li>La proposta deve essere senza condizionale.</li>
-<li>La proposta deve essere scendibile.</li>
-<li>La proposta deve utilizzare un supporto visivo.</li>
-<li>Non utilizzare il condizionale durante la simulazione.</li>
-<li>Non introdurre obiezioni diverse da quella richiesta.</li>
-<li>Non introdurre una terza famiglia di obiezione.</li>
-<li>Non svendere.</li>
-<li>Nel PREZZO utilizza PROPONGO → DIFENDO → SCENDO → CHIUSURA.</li>
-<li>Nel «CI DEVO PENSARE» utilizza il METODO DELLE TRE CAREZZE.</li>
-<li>Nel «CI DEVO PENSARE» sviluppa prima TIMORE / PAURA / INCERTEZZA.</li>
-<li>Dopo che il cliente sceglie la causa, non ripetere le tre possibilità.</li>
-<li>Nel TIMORE utilizza ascolto empatico e AWAY FROM → GO TO.</li>
-<li>Nel TIMORE puoi utilizzare LIFE TIME VALUE e CONTROESEMPIO quando coerenti.</li>
-<li>Se il TIMORE viene superato, chiudi direttamente la trattativa.</li>
-<li>Non prendere automaticamente un nuovo appuntamento.</li>
-<li>Nel NON MI SONO SPIEGATO IN MODO CHIARISSIMO il nuovo appuntamento esiste solo se servono ulteriori chiarimenti.</li>
-<li>Nel PREZZO non prendere un nuovo appuntamento.</li>
-<li>Solo nella strada PREZZO del «CI DEVO PENSARE» utilizza PROPONGO → DIFENDO → SCENDO → CHIUSURA.</li>
-<li>Dopo SCENDO, nella strada PREZZO, vai direttamente in CHIUSURA.</li>
-<li>Non dare voti, punteggi o pagelle.</li>
-<li>Non aggiungere una valutazione finale.</li>
-<li>Indica tra parentesi quadre solo le tecniche fondamentali realmente utilizzate.</li>
-<li>La simulazione deve essere realistica e completa.</li>
-<li>Il cliente non deve facilitare artificialmente la vendita.</li>
-</ol>
-
-
-<hr>
-
-<h2>STRUTTURA DELLA SIMULAZIONE</h2>
-
-<h3>SCENARIO</h3>
-<p>Breve introduzione.</p>
-
-<h3>CLIENTE</h3>
-<p>Battuta del cliente.</p>
-
-<h3>VENDITORE</h3>
-<p>Risposta del venditore secondo il metodo corretto.</p>
-
-<h3>CLIENTE</h3>
-<p>Reazione realistica.</p>
-
-<h3>VENDITORE</h3>
-<p>Risposta successiva.</p>
-
-<p>
-Continua fino alla conclusione della trattativa.
-</p>
-
-<p>
-La simulazione termina con:
-</p>
-
-<ul>
-<li>firma;</li>
-<li>accordo;</li>
-<li>oppure mancata conclusione motivata dal comportamento del cliente.</li>
-</ul>
-
-
-<hr>
-
-<h2>CONTROLLO FINALE PRIMA DI GENERARE LA SIMULAZIONE</h2>
-
-<p>
-Prima di generare la simulazione verifica internamente:
-</p>
-
-<ul>
-<li>Sto usando solo i dati forniti?</li>
-<li>Ho evitato completamente il condizionale?</li>
-<li>Ho fatto la breve riflessione sulla proposta?</li>
-<li>Ho distinto correttamente PREZZO e CI DEVO PENSARE?</li>
-<li>Nel CI DEVO PENSARE ho utilizzato prima le TRE CAREZZE?</li>
-<li>Ho sviluppato prima TIMORE / PAURA / INCERTEZZA?</li>
-<li>Ho evitato PROPONGO → DIFENDO → SCENDO nella strada TIMORE?</li>
-<li>Ho utilizzato PROPONGO → DIFENDO → SCENDO solo nella strada PREZZO?</li>
-<li>Se il timore viene superato, ho portato direttamente alla chiusura?</li>
-<li>Ho evitato di prendere automaticamente un nuovo appuntamento?</li>
-<li>Ho mantenuto il cliente realistico e non compiacente?</li>
-<li>Ho concluso realmente la trattativa?</li>
-</ul>
-
-
-<hr>
-
-<p>
-<strong>
-L'AIutino è costruito per allenare la gestione delle obiezioni
-senza sostituire il venditore.
-</strong>
-</p>
-
+<div class="page">
+  <section class="hero">
+    <div class="author">DARIO PORTA</div>
+    <div class="edition">SECONDA EDIZIONE</div>
+    <h1>TI AMO...<span>MA CI DEVO PENSARE</span></h1>
+    <div class="subtitle">Tecniche di comunicazione e relazionali per affascinare i clienti nell'era digitale e dell'AI.</div>
+    <img class="cover" src="data:image/png;base64,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" alt="Copertina del libro Ti amo... ma ci devo pensare">
+  </section>
+  <main class="main">
+    <div class="title-row">
+      <div class="title-icon">▣</div>
+      <div><h2>AIutino - Capitoli 4/5 e Obiezioni</h2><div class="intro">Dalla proposta alla firma. Allena a gestire l'obiezione prezzo e il «ci devo pensare».</div></div>
+    </div>
+
+    <div class="card blue">
+      <div class="label"><span class="dot">●</span> IO</div>
+      <div class="hint">Qual è il tuo ruolo e cosa fai?</div>
+      <textarea id="io" placeholder="Scrivi il tuo ruolo e cosa fai..."></textarea>
+    </div>
+    <div class="card green">
+      <div class="label"><span class="dot">▣</span> POTENZIALE CLIENTE</div>
+      <div class="hint">Ragione sociale + categoria + località</div>
+      <input id="cliente" placeholder="Es. Fiorista Rosy, fiorista, Monza">
+    </div>
+    <div class="card mint">
+      <div class="label"><span class="dot">?</span> ESIGENZA EMERSA</div>
+      <div class="hint">Cosa è emerso durante l'ascolto?</div>
+      <textarea id="esigenza" placeholder="Scrivi l'esigenza emersa..."></textarea>
+    </div>
+    <div class="card orange">
+      <div class="label"><span class="dot">◆</span> PROPOSTA</div>
+      <div class="hint">Cosa proponi al cliente?</div>
+      <textarea id="proposta" placeholder="Scrivi il prodotto o servizio che proponi..."></textarea>
+    </div>
+
+    <div class="objection">
+      <div class="ob-title"><span class="dot">?</span> OBIEZIONE DA ALLENARE</div>
+      <div class="options">
+        <div class="option">
+          <input type="radio" id="prezzo" name="obiezione" value="OBIEZIONE DI PREZZO — «COSTA TROPPO»">
+          <label for="prezzo">1 — PREZZO<small>PROPONGO → DIFENDO → SCENDO</small></label>
+        </div>
+        <div class="option">
+          <input type="radio" id="pensare" name="obiezione" value="OBIEZIONE DI RIMANDO — «CI DEVO PENSARE»" checked>
+          <label for="pensare">2 — CI DEVO PENSARE<small>Obiezione di rimando — 3 Carezze</small></label>
+        </div>
+      </div>
+    </div>
+
+    <button class="prepare" id="prepare">▣ PREPARA E COPIA IL PROMPT</button>
+
+    <div class="after">
+      <div class="after-title">COSA FARE DOPO</div>
+      <div class="steps">
+        <div class="step"><b><span class="num">1</span>Copia il prompt</b>Clicca sul pulsante qui sopra.</div>
+        <div class="step"><b><span class="num">2</span>Apri ChatGPT o la tua AI</b>Vai su ChatGPT oppure sull'assistente AI che usi.</div>
+        <div class="step"><b><span class="num">3</span>Incolla e invia</b>Nella chat incolla il prompt, invia e... buona vendita.</div>
+      </div>
+    </div>
+
+    <button class="prompt-toggle" id="toggle">▶ &nbsp; Visualizza il prompt</button>
+    <div class="prompt-box" id="promptBox"><pre id="promptPreview"></pre></div>
+    <div class="note">ⓘ L'AIutino è costruito per allenare la gestione delle obiezioni senza sostituire il venditore.</div>
+  </main>
+</div>
+
+<script>
+const TEMPLATE = "AIUTINO — SIMULAZIONE COMMERCIALE COMPLETA E AUTONOMA\nISTRUZIONE PRINCIPALE\nAGISCI COME UN VENDITORE ESPERTO.\nCrea una\nSIMULAZIONE COMMERCIALE COMPLETA E AUTONOMA\n,\ndalla\nPROPOSTA\nfino alla\nFIRMA\n,\nalla\nDECISIONE POSITIVA\noppure alla\nCONCLUSIONE DELLA TRATTATIVA\n.\nLa simulazione deve funzionare per\nQUALSIASI VENDITORE,\nQUALSIASI SETTORE, QUALSIASI PRODOTTO O SERVIZIO\n.\nDATI INIZIALI DELLA TRATTATIVA\nIO:\n{{IO}}\nPOTENZIALE CLIENTE:\n{{CLIENTE}}\nESIGENZA EMERSA:\n{{ESIGENZA}}\nPROPOSTA:\n{{PROPOSTA}}\nOBIEZIONE DA ALLENARE:\n{{OBIEZIONE}}\nREGOLE GENERALI\nLa simulazione è completa e autonoma.\nNon chiedere al venditore cosa vuole fare dopo ogni battuta.\nNon interrompere la simulazione per chiedere conferme.\nNon inventare i dati iniziali: utilizza esclusivamente quelli inseriti nei campi.\nNon inventare esigenze, caratteristiche, numeri o risultati non forniti.\nIl cliente deve comportarsi come un cliente reale: può essere dubbioso, scettico, fare domande, opporsi e non essere immediatamente convinto.\nIl cliente non deve facilitare artificialmente la vendita.\nLa simulazione deve arrivare fino alla firma, all'accordo oppure alla conclusione della trattativa se il cliente decide di non procedere.\nDistingui sempre chiaramente\nVENDITORE\ne\nCLIENTE\n.\nNon dare voti, punteggi o pagelle.\nNon aggiungere una valutazione finale.\nIndica tra parentesi quadre solo le tecniche realmente fondamentali utilizzate.\nREGOLA ASSOLUTA — NIENTE CONDIZIONALE\nDurante tutta la simulazione il venditore\nNON DEVE MAI UTILIZZARE IL CONDIZIONALE\n.\nNON UTILIZZARE:\npotrebbe, potremmo, sarebbe, dovrebbe, vorrebbe, potrei,\nsarebbe utile, potrebbe essere, se volesse, se potessimo,\nmagari potremmo, forse sarebbe.\nUTILIZZARE:\nfacciamo, partiamo, procediamo, le propongo, la soluzione è,\nquesto serve a, l'obiettivo è, definiamo, fissiamo, inseriamo,\nrimandiamo.\nPRIMA DI GESTIRE L'OBIEZIONE — RIFLESSIONE SULLA PROPOSTA\nPrima di iniziare la gestione dell'obiezione scelta,\nfai una\nBREVE RIFLESSIONE SULLA PROPOSTA\n.\nRicorda esclusivamente questi tre principi:\n1. NIENTE CONDIZIONALE\nLa proposta viene presentata con linguaggio deciso,\nutilizzando il presente e mai il condizionale.\n2. PROPOSTA SCENDIBILE\nLa proposta deve essere costruita in modo da poter\nSCENDERE SENZA SVENDERE\n.\nIl venditore protegge gli elementi\nDETERMINANTI\nper raggiungere l'obiettivo\ne può invece posticipare oppure sacrificare gli elementi\nIMPORTANTI MA NON DETERMINANTI\n.\nLa scelta non deve mai essere presentata come:\n«fare tutto oppure non fare nulla»\n.\nLa proposta mantiene la direzione verso l'obiettivo anche\nquando alcuni elementi vengono posticipati o sacrificati.\n3. SUPPORTO VISIVO\nLa proposta deve essere accompagnata da un\nSUPPORTO VISIVO\n: schema, disegno, tabella,\nmappa, carta e penna, immagini, esempi o altro strumento\ncoerente con il settore.\nIl supporto visivo deve rendere immediatamente comprensibile\nil percorso proposto.\nQuesta riflessione deve essere\nBREVE\ne non deve\ntrasformarsi in una lezione teorica.\nREGOLA FONDAMENTALE — LE DUE FAMIGLIE DI OBIezIONE SONO SEPARATE\nNON CONFONDERE MAI LE DUE GESTIONI.\nL'obiezione\n«COSTA TROPPO»\nutilizza esclusivamente:\nPROPONGO → DIFENDO → SCENDO → CHIUSURA\nL'obiezione\n«CI DEVO PENSARE»\nutilizza invece\nIL METODO DELLE TRE CAREZZE\n.\nPROPONGO → DIFENDO → SCENDO\nNON deve essere\nutilizzato nel percorso «CI DEVO PENSARE»,\ntranne nel caso in cui il cliente, scegliendo una delle\ntre carezze, dichiari esplicitamente che il motivo è il PREZZO.\nSE L'OBIEZIONE È DI PREZZO — «COSTA TROPPO»\nUtilizza\nESCLUSIVAMENTE\n:\nPROPONGO → DIFENDO → SCENDO → CHIUSURA\n1. PROPONGO\nDopo la presentazione della proposta, il prezzo e il silenzio,\nil cliente dice:\n«Costa troppo.»\nIl venditore risponde con un'accoglienza realistica e riconosce\nche le decisioni economiche vanno valutate con attenzione.\nEsempio:\n«Capisco. Oggi non si possono fare scelte avventate,\nbisogna stare attenti. Ma, per un momento, lasci da parte\ne non pensi al prezzo: quello che abbiamo visto le interessa?»\n2. DIFENDO\nIl venditore non difende semplicemente il prezzo.\nDifende la propria\nCREDIBILITÀ\ne il\nVALORE DELLA PROPOSTA\n.\nRiporta l'attenzione dal costo al valore e a ciò che significa\nper il cliente raggiungere l'obiettivo.\nQuando coerente, utilizza il\nLIFE TIME VALUE\n,\nconsiderando:\nvalore medio di una vendita;\nquante persone porta un cliente;\naltri prodotti o servizi acquistati;\nfrequenza d'acquisto;\ndurata della relazione;\npassaparola.\nNON inventare numeri.\nSe i numeri non sono disponibili, utilizza domande e\nragionamenti qualitativi.\n3. SCENDO\nSe il cliente continua a sostenere che il prezzo è troppo alto,\nil venditore\nSCENDE SENZA SVENDERE\n.\nScendere significa:\nPROTEGGERE I DETERMINANTI → POSTICIPARE O SACRIFICARE I NON DETERMINANTI\nIl venditore spiega che non esiste soltanto la scelta tra\nfare tutto e non fare nulla.\nIndividua ciò che è determinante e protegge quello.\nGli elementi importanti ma non determinanti possono essere\nposticipati oppure sacrificati.\n4. CHIUSURA\nDOPO SCENDO SI VA DIRETTAMENTE IN CHIUSURA.\nNon aggiungere altre obiezioni.\nNon aprire altre strade.\nNon prendere un nuovo appuntamento per gestire il prezzo.\nSE L'OBIEZIONE È DI RIMANDO — «CI DEVO PENSARE»\nUtilizza il\nMETODO DELLE TRE CAREZZE\n.\nATTENZIONE:\nin questo percorso NON utilizzare automaticamente\nPROPONGO → DIFENDO → SCENDO.\nIl metodo delle Tre Carezze serve prima di tutto a\nIDENTIFICARE IL VERO MOTIVO\ndel rimando.\nLE TRE CAREZZE\nNON MI SONO SPIEGATO IN MODO CHIARISSIMO\nTIMORE / PAURA / INCERTEZZA\nPREZZO\nLa simulazione deve sviluppare\nPRIMA\nla versione:\nTIMORE / PAURA / INCERTEZZA\nLe altre due versioni NON devono essere sviluppate\nautomaticamente.\nDevono essere proposte solo alla fine della simulazione principale.\nPARTENZA — «CI DEVO PENSARE»\nIl cliente dice:\n«Ci devo pensare.»\nIl venditore accoglie il rimando e spiega in modo naturale\nperché pone la domanda.\nDeve far comprendere al cliente che esistono\nTRE POSSIBILI MOTIVI\ne chiedergli di individuare\nquello che corrisponde realmente alla sua situazione.\nUtilizza una formulazione di questo tipo:\n«Sì, certo, capisco, si prenda tutto il tempo che le serve.\nLe chiedo solo una cosa: alcuni dei miei clienti che mi hanno\ndetto inizialmente che ci dovevano pensare lo hanno fatto perché\nnon mi ero spiegato in modo chiarissimo, oppure per un timore\no un'incertezza, oppure per il prezzo.\nQuale delle tre sente più vicina alla sua situazione?»\nLa domanda deve permettere al cliente di scegliere\nUNA DELLE TRE STRADE\n.\nDOPO LA SCELTA DEL CLIENTE\nQuando il cliente indica una delle tre cause:\nNON ripetere l'elenco delle tre possibilità;\nNON ripetere la domanda;\nNON chiedere nuovamente «quali elementi devo chiarire?»;\nentra direttamente nella gestione della causa scelta.\nVERSIONE PRINCIPALE — TIMORE / PAURA / INCERTEZZA\nQuesta è la\nPRIMA VERSIONE DA SVILUPPARE\n.\n1. IN ACCORDO\nAccogli il rimando senza combatterlo.\nEsempio:\n«Ci mancherebbe altro, si prenda tutto il tempo che le serve,\nfaccia tutte le considerazioni e ci pensi tranquillamente.»\nOppure:\n«Faccia pure, si prenda il tempo che le serve.»\nNon utilizzare tutte le varianti insieme.\n2. COMPRENDERE IL TIMORE\nLa conversazione diventa più\nCONFIDENZIALE, AMICHEVOLE E UMANA\n.\nIl venditore non mette il cliente sotto pressione.\nDeve comprendere cosa lo frena realmente.\nPuò utilizzare una domanda come:\n«Mi dica una cosa molto semplicemente: qual è la cosa che\nle fa più paura?»\nIl venditore deve ascoltare la risposta e sviluppare\nla conversazione sulla paura realmente dichiarata dal cliente.\n3. AWAY FROM → GO TO\nUtilizza:\nAWAY FROM → GO TO\nAWAY FROM:\nporta alla luce ciò che il cliente teme.\nGO TO:\nriporta l'attenzione verso ciò che il cliente vuole ottenere,\nverso l'esigenza emersa e verso la direzione desiderata.\nNon inventare bisogni o obiettivi.\nUtilizza esclusivamente ciò che emerge dalla conversazione\ne dai dati iniziali.\n4. LIFE TIME VALUE\nIl LIFE TIME VALUE può essere utilizzato quando è coerente.\nNON inventare numeri.\nSe i dati non sono disponibili, utilizza esclusivamente\nragionamenti qualitativi e domande.\n5. CONTROESEMPIO\nQuando coerente, può essere utilizzato il controesempio:\n«Sì, capisco. Ma, pensandoci un momento, ti ricordi qualche\naltra volta in cui una cosa ti sembrava difficile, ne avevi\ntimore, e poi invece sei riuscito a superarla e ne sei stato\norgoglioso?»\nIl controesempio deve essere utilizzato solo se realmente\ncoerente con la conversazione.\n6. CHIUSURA\nSe il cliente supera il timore e dichiara di essere pronto,\nil venditore deve accompagnarlo\nDIRETTAMENTE ALLA DECISIONE\nE ALLA CHIUSURA\n.\nLa sequenza è:\nTIMORE → CHIARIMENTO → DECISIONE → CHIUSURA\nNON prendere automaticamente un nuovo appuntamento.\nSe il cliente dichiara esplicitamente di non essere ancora pronto,\nla simulazione può concludersi senza forzare artificialmente\nla firma.\nDOPO LA VERSIONE TIMORE\nDopo aver completato e concluso la simulazione principale,\nNON sviluppare automaticamente le altre due versioni.\nConcludi la simulazione principale e poi scrivi:\n«Se vuoi, posso mostrarti anche le altre due versioni del\n“ci devo pensare”:\nNon mi sono spiegato in modo chiarissimo\nPrezzo\nVERSIONE ALTERNATIVA 1 — NON MI SONO SPIEGATO IN MODO CHIARISSIMO\nSe il lettore sceglie questa versione, sviluppa una\nSIMULAZIONE SEPARATA\n.\nIl focus è esclusivamente la\nCHIAREZZA DELLA PROPOSTA\n.\nIl venditore rende la proposta:\npiù chiara;\npiù precisa;\npiù concreta.\nUtilizza, quando disponibili:\nnumeri;\nstatistiche;\nesempi;\ncasi significativi;\nelementi concreti della proposta.\nNON inventare dati.\nSe il cliente, dopo i chiarimenti, è sufficientemente informato\ne pronto a decidere, il venditore chiude direttamente.\nSe invece emerge una reale necessità di ulteriori spiegazioni,\nesempi, numeri o approfondimenti che richiedono tempo,\nil venditore può prendere un nuovo appuntamento.\nIl nuovo appuntamento deve avere un obiettivo preciso:\nCHIARIRE MEGLIO LA PROPOSTA ATTRAVERSO ESEMPI,\nELEMENTI CONCRETI, NUMERI O SPIEGAZIONI DISPONIBILI.\nNON prendere un appuntamento semplicemente perché il cliente\n«ci deve pensare».\nVERSIONE ALTERNATIVA 2 — PREZZO\nSOLO IN QUESTA STRADA\n, quando il cliente dichiara\nche il motivo del rimando è il prezzo, si passa alla gestione:\nPROPONGO → DIFENDO → SCENDO → CHIUSURA\nQuesta è l'unica situazione all'interno del\n«CI DEVO PENSARE» nella quale viene utilizzata\nla struttura del prezzo.\nNon trasformare nuovamente il prezzo in\n«ci devo pensare».\nNon prendere un nuovo appuntamento per gestire il prezzo.\nDopo\nSCENDO\nvai direttamente in\nCHIUSURA\n.\nREGOLE ASSOLUTE DI CONTROLLO\nNon inventare l'esigenza.\nNon inventare dati.\nNon aggiungere il campo Vision come dato iniziale.\nPrima delle obiezioni fai una breve riflessione sulla proposta.\nLa proposta deve essere senza condizionale.\nLa proposta deve essere scendibile.\nLa proposta deve utilizzare un supporto visivo.\nNon utilizzare il condizionale durante la simulazione.\nNon introdurre obiezioni diverse da quella richiesta.\nNon introdurre una terza famiglia di obiezione.\nNon svendere.\nNel PREZZO utilizza PROPONGO → DIFENDO → SCENDO → CHIUSURA.\nNel «CI DEVO PENSARE» utilizza il METODO DELLE TRE CAREZZE.\nNel «CI DEVO PENSARE» sviluppa prima TIMORE / PAURA / INCERTEZZA.\nDopo che il cliente sceglie la causa, non ripetere le tre possibilità.\nNel TIMORE utilizza ascolto empatico e AWAY FROM → GO TO.\nNel TIMORE puoi utilizzare LIFE TIME VALUE e CONTROESEMPIO quando coerenti.\nSe il TIMORE viene superato, chiudi direttamente la trattativa.\nNon prendere automaticamente un nuovo appuntamento.\nNel NON MI SONO SPIEGATO IN MODO CHIARISSIMO il nuovo appuntamento esiste solo se servono ulteriori chiarimenti.\nNel PREZZO non prendere un nuovo appuntamento.\nSolo nella strada PREZZO del «CI DEVO PENSARE» utilizza PROPONGO → DIFENDO → SCENDO → CHIUSURA.\nDopo SCENDO, nella strada PREZZO, vai direttamente in CHIUSURA.\nNon dare voti, punteggi o pagelle.\nNon aggiungere una valutazione finale.\nIndica tra parentesi quadre solo le tecniche fondamentali realmente utilizzate.\nLa simulazione deve essere realistica e completa.\nIl cliente non deve facilitare artificialmente la vendita.\nSTRUTTURA DELLA SIMULAZIONE\nSCENARIO\nBreve introduzione.\nCLIENTE\nBattuta del cliente.\nVENDITORE\nRisposta del venditore secondo il metodo corretto.\nCLIENTE\nReazione realistica.\nVENDITORE\nRisposta successiva.\nContinua fino alla conclusione della trattativa.\nLa simulazione termina con:\nfirma;\naccordo;\noppure mancata conclusione motivata dal comportamento del cliente.\nCONTROLLO FINALE PRIMA DI GENERARE LA SIMULAZIONE\nPrima di generare la simulazione verifica internamente:\nSto usando solo i dati forniti?\nHo evitato completamente il condizionale?\nHo fatto la breve riflessione sulla proposta?\nHo distinto correttamente PREZZO e CI DEVO PENSARE?\nNel CI DEVO PENSARE ho utilizzato prima le TRE CAREZZE?\nHo sviluppato prima TIMORE / PAURA / INCERTEZZA?\nHo evitato PROPONGO → DIFENDO → SCENDO nella strada TIMORE?\nHo utilizzato PROPONGO → DIFENDO → SCENDO solo nella strada PREZZO?\nSe il timore viene superato, ho portato direttamente alla chiusura?\nHo evitato di prendere automaticamente un nuovo appuntamento?\nHo mantenuto il cliente realistico e non compiacente?\nHo concluso realmente la trattativa?\nL'AIutino è costruito per allenare la gestione delle obiezioni\nsenza sostituire il venditore.";
+
+function buildPrompt() {
+  const io = document.getElementById('io').value.trim() || 'Dario Porta, consulente digitale';
+  const cliente = document.getElementById('cliente').value.trim() || 'Fiorista Rosy';
+  const esigenza = document.getElementById('esigenza').value.trim() || 'Composizioni floreali per matrimoni';
+  const proposta = document.getElementById('proposta').value.trim() || 'Google Ads, presenza digitale, FB Presence';
+  const obiezione = document.querySelector('input[name="obiezione"]:checked').value;
+  return TEMPLATE
+    .replace('{IO}', io)
+    .replace('{CLIENTE}', cliente)
+    .replace('{ESIGENZA}', esigenza)
+    .replace('{PROPOSTA}', proposta)
+    .replace('{OBIEZIONE}', obiezione);
+}
+
+function refreshPreview() {
+  document.getElementById('promptPreview').textContent = buildPrompt();
+}
+
+document.getElementById('prepare').addEventListener('click', async () => {
+  const prompt = buildPrompt();
+  refreshPreview();
+  const btn = document.getElementById('prepare');
+  try {
+    await navigator.clipboard.writeText(prompt);
+    btn.textContent = '✓ PROMPT COPIATO';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '▣ PREPARA E COPIA IL PROMPT';
+      btn.classList.remove('copied');
+    }, 2200);
+  } catch(e) {
+    document.getElementById('promptBox').style.display = 'block';
+    document.getElementById('toggle').textContent = '▼  Nascondi il prompt';
+    btn.textContent = 'PROMPT PRONTO — COPIALO DAL RIQUADRO';
+  }
+});
+
+document.getElementById('toggle').addEventListener('click', () => {
+  const box = document.getElementById('promptBox');
+  const open = box.style.display === 'block';
+  refreshPreview();
+  box.style.display = open ? 'none' : 'block';
+  document.getElementById('toggle').textContent = open ? '▶  Visualizza il prompt' : '▼  Nascondi il prompt';
+});
+
+document.querySelectorAll('input, textarea').forEach(el => el.addEventListener('input', refreshPreview));
+document.querySelectorAll('input[name="obiezione"]').forEach(el => el.addEventListener('change', refreshPreview));
+refreshPreview();
+</script>
 </body>
 </html>
