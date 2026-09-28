@@ -170,7 +170,7 @@ details[open] summary{border-bottom:1px solid #ddd}
   <div class="card blue">
     <div class="row"><div class="small-icon">?</div><div>
       <label>OBIEZIONE DA ALLENARE</label>
-      <span class="help">Scegli una delle tre famiglie di obiezione.</span>
+      <span class="help">Scegli una delle due famiglie di obiezione.</span>
     </div></div>
     <div class="options">
       <label class="option active"><input type="radio" name="obiezione" value="1" checked><strong>1 — PREZZO</strong><span>PROPONGO → DIFENDO → SCENDO</span></label>
@@ -583,11 +583,11 @@ La simulazione termina con la conclusione della trattativa.
 const fields={io:document.getElementById('io'),cliente:document.getElementById('cliente'),esigenza:document.getElementById('esigenza'),proposta:document.getElementById('proposta')};
 const preview=document.getElementById('preview');
 const btn=document.getElementById('copyBtn');
-function selectedObiezione(){const v=document.querySelector('input[name="obiezione"]:checked').value;return v==='1'?'OBIEZIONE DI PREZZO — «COSTA TROPPO»':'[OBIEZIONE]'}
+function selectedObiezione(){const el=document.querySelector('input[name="obiezione"]:checked'); const v=el?el.value:'1'; return v==='1'?'OBIEZIONE DI PREZZO — «COSTA TROPPO»':'OBIEZIONE DI RIMANDO — «CI DEVO PENSARE»'}
 function getPrompt(){return template.replaceAll('[IO]',fields.io.value.trim()||'[DA INSERIRE]').replaceAll('[POTENZIALE_CLIENTE]',fields.cliente.value.trim()||'[DA INSERIRE]').replaceAll('[ESIGENZA]',fields.esigenza.value.trim()||'[DA INSERIRE]').replaceAll('[PROPOSTA]',fields.proposta.value.trim()||'[DA INSERIRE]').replaceAll('[OBIEZIONE]',selectedObiezione())}
 function refresh(){preview.textContent=getPrompt()}
 Object.values(fields).forEach(el=>el.addEventListener('input',refresh));
-document.querySelectorAll('.option').forEach(el=>el.addEventListener('click',()=>{document.querySelectorAll('.option').forEach(x=>x.classList.remove('active'));el.classList.add('active');el.querySelector('input').checked=true;refresh()}));
+document.querySelectorAll('.option').forEach(el=>{const input=el.querySelector('input'); el.addEventListener('click',()=>{document.querySelectorAll('.option').forEach(x=>x.classList.remove('active'));el.classList.add('active');input.checked=true;refresh()}); input.addEventListener('change',()=>{document.querySelectorAll('.option').forEach(x=>x.classList.remove('active'));el.classList.add('active');refresh()});});
 btn.addEventListener('click',async()=>{if(!fields.io.value.trim()||!fields.cliente.value.trim()||!fields.esigenza.value.trim()||!fields.proposta.value.trim()){alert('Compila tutti i campi iniziali prima di preparare il prompt.');return}const p=getPrompt();try{await navigator.clipboard.writeText(p)}catch(e){const t=document.createElement('textarea');t.value=p;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}btn.textContent='✓  PROMPT COPIATO';setTimeout(()=>btn.textContent='▣  PREPARA E COPIA IL PROMPT',1800)});
 refresh();
 </script>
