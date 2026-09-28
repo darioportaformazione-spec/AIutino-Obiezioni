@@ -199,7 +199,7 @@ details[open] summary{border-bottom:1px solid #ddd}
 </div>
 
 <script>
-const template = `AGISCI COME UN VENDITORE ESPERTO.
+const template = "AGISCI COME UN VENDITORE ESPERTO.
 
 Crea una SIMULAZIONE COMMERCIALE COMPLETA E AUTONOMA, dalla PROPOSTA fino alla FIRMA, alla decisione positiva oppure alla conclusione della trattativa.
 
@@ -208,19 +208,19 @@ La simulazione deve funzionare per QUALSIASI VENDITORE, QUALSIASI SETTORE, QUALS
 DATI INIZIALI DELLA TRATTATIVA
 
 IO:
-dario porta consulente digitale
+[IO]
 
 POTENZIALE CLIENTE:
-fiorista rosy
+[POTENZIALE_CLIENTE]
 
 ESIGENZA EMERSA:
-composizioni floreALI per matrimoni
+[ESIGENZA]
 
 PROPOSTA:
-google ads, presenza digitale, fb presence
+[PROPOSTA]
 
 OBIEZIONE DA ALLENARE:
-OBIEZIONE DI RIMANDO — «CI DEVO PENSARE»
+[OBIEZIONE]
 
 REGOLE GENERALI
 
@@ -577,13 +577,13 @@ Nel caso «CI DEVO PENSARE»:
 - nella versione PREZZO, segui PROPONGO → DIFENDO → SCENDO → CHIUSURA senza prendere un nuovo appuntamento. [PROPONGO] [DIFENDO] [SCENDO] [CHIUSURA]
 
 La simulazione termina con la conclusione della trattativa.
-ⓘ   L’AIutino è costruito per allenare la gestione delle obiezioni senza sostituire il venditore.`;
+ⓘ   L’AIutino è costruito per allenare la gestione delle obiezioni senza sostituire il venditore.";
 
 
 const fields={io:document.getElementById('io'),cliente:document.getElementById('cliente'),esigenza:document.getElementById('esigenza'),proposta:document.getElementById('proposta')};
 const preview=document.getElementById('preview');
 const btn=document.getElementById('copyBtn');
-function selectedObiezione(){const v=document.querySelector('input[name="obiezione"]:checked').value;return v==='1'?'OBIEZIONE DI PREZZO — «COSTA TROPPO»':'OBIEZIONE DI RIMANDO — «CI DEVO PENSARE»'}
+function selectedObiezione(){const v=document.querySelector('input[name="obiezione"]:checked').value;return v==='1'?'OBIEZIONE DI PREZZO — «COSTA TROPPO»':'[OBIEZIONE]'}
 function getPrompt(){return template.replaceAll('[IO]',fields.io.value.trim()||'[DA INSERIRE]').replaceAll('[POTENZIALE_CLIENTE]',fields.cliente.value.trim()||'[DA INSERIRE]').replaceAll('[ESIGENZA]',fields.esigenza.value.trim()||'[DA INSERIRE]').replaceAll('[PROPOSTA]',fields.proposta.value.trim()||'[DA INSERIRE]').replaceAll('[OBIEZIONE]',selectedObiezione())}
 function refresh(){preview.textContent=getPrompt()}
 Object.values(fields).forEach(el=>el.addEventListener('input',refresh));
