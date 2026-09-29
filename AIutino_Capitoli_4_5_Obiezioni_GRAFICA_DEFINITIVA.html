@@ -107,7 +107,7 @@ details[open] summary{border-bottom:1px solid #ddd}
 </style>
 
 <style>
-.options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}.option{border:2px solid #e1e4e7;border-radius:13px;background:#fff;padding:15px;cursor:pointer;display:block!important;margin:0!important}.option input{display:none!important}.option.active{border-color:#d91f16;background:#fff5f3}.option strong{display:block;font-size:16px}.option span{display:block;color:#68727e;font-size:13px;margin-top:5px;line-height:1.25}.orange{background:#fff4e8}.orange .small-icon{background:#ffe2bd}@media(max-width:760px){.options{grid-template-columns:1fr;gap:7px}.option{padding:10px}.option strong{font-size:11.5px}.option span{font-size:9px}}
+.options{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:4px}.option{border:2px solid #e1e4e7;border-radius:13px;background:#fff;padding:15px;cursor:pointer;display:block!important;margin:0!important;text-align:left;font:inherit;color:inherit;width:100%;appearance:none;-webkit-appearance:none}.option:focus{outline:3px solid rgba(217,31,22,.2);outline-offset:2px}.option.active{border-color:#d91f16;background:#fff5f3}.option strong{display:block;font-size:16px}.option span{display:block;color:#68727e;font-size:13px;margin-top:5px;line-height:1.25}.orange{background:#fff4e8}.orange .small-icon{background:#ffe2bd}@media(max-width:760px){.options{grid-template-columns:1fr;gap:7px}.option{padding:10px}.option strong{font-size:11.5px}.option span{font-size:9px}}
 </style>
 </head>
 <body>
@@ -170,11 +170,11 @@ details[open] summary{border-bottom:1px solid #ddd}
   <div class="card blue">
     <div class="row"><div class="small-icon">?</div><div>
       <label>OBIEZIONE DA ALLENARE</label>
-      <span class="help">Scegli una delle tre famiglie di obiezione.</span>
+      <span class="help">Scegli una delle due famiglie di obiezione.</span>
     </div></div>
-    <div class="options">
-      <label class="option active"><input type="radio" name="obiezione" value="1" checked><strong>1 — PREZZO</strong><span>PROPONGO → DIFENDO → SCENDO</span></label>
-      <label class="option"><input type="radio" name="obiezione" value="2"><strong>2 — CI DEVO PENSARE</strong><span>Obiezione di rimando — 3 Carezze</span></label>
+    <div class="options" id="obiezioni">
+      <button type="button" class="option active" data-obiezione="1"><strong>1 — PREZZO</strong><span>PROPONGO → DIFENDO → SCENDO</span></button>
+      <button type="button" class="option" data-obiezione="2"><strong>2 — CI DEVO PENSARE</strong><span>Obiezione di rimando — 3 Carezze</span></button>
     </div>
   </div>
 
@@ -208,19 +208,19 @@ La simulazione deve funzionare per QUALSIASI VENDITORE, QUALSIASI SETTORE, QUALS
 DATI INIZIALI DELLA TRATTATIVA
 
 IO:
-dario porta consulente digitale
+[IO]
 
 POTENZIALE CLIENTE:
-fiorista rosy
+[POTENZIALE_CLIENTE]
 
 ESIGENZA EMERSA:
-composizioni floreALI per matrimoni
+[ESIGENZA]
 
 PROPOSTA:
-google ads, presenza digitale, fb presence
+[PROPOSTA]
 
 OBIEZIONE DA ALLENARE:
-OBIEZIONE DI RIMANDO — «CI DEVO PENSARE»
+[OBIEZIONE]
 
 REGOLE GENERALI
 
@@ -336,12 +336,12 @@ La simulazione deve partire PRIMA dal tema:
 
 TIMORE / PAURA / INCERTEZZA.
 
-Solo successivamente, alla fine della simulazione principale, proponi al lettore di vedere anche le altre due possibili versioni:
+Alla fine della simulazione principale NON sviluppare né proporre altre due simulazioni.
+
+Riassumi soltanto come gestire le altre due possibili strade:
 
 1. NON MI SONO SPIEGATO IN MODO CHIARISSIMO
 2. PREZZO
-
-NON sviluppare prima queste due varianti.
 
 --------------------------------------------------
 METODO DELLE TRE CAREZZE
@@ -353,11 +353,11 @@ Il «CI DEVO PENSARE» viene gestito attraverso TRE possibili CAREZZE: [TRE CARE
 2. TIMORE / PAURA / INCERTEZZA
 3. PREZZO
 
-La simulazione deve però sviluppare inizialmente la CAREZZA:
+La simulazione sviluppa inizialmente e in modo completo la CAREZZA:
 
 TIMORE / PAURA / INCERTEZZA.
 
-Le altre due vengono affrontate solo successivamente, se il lettore sceglie di visualizzarle.
+Le altre due strade NON devono essere sviluppate come simulazioni separate: alla fine devono essere soltanto riassunte come indicazioni operative.
 
 --------------------------------------------------
 PARTENZA — «CI DEVO PENSARE»
@@ -371,22 +371,9 @@ Il venditore risponde in modo discorsivo, naturale e umano, senza trasformare la
 
 Utilizza una formulazione di questo tipo:
 
-⭐ PASSAGGIO FONDAMENTALE — SCEGLIERE LA STRADA GIUSTA ⭐
-
 «Sì, certo, capisco, si prenda tutto il tempo che le serve. Le chiedo solo una cosa: alcuni dei miei clienti che mi hanno detto inizialmente che ci dovevano pensare lo hanno fatto perché non mi ero spiegato in modo chiarissimo, oppure per un timore o un'incertezza, oppure per il prezzo. Quale delle tre sente più vicina alla sua situazione?»
 
-[PASSAGGIO FONDAMENTALE]
-
-Nella simulazione, quando arrivi a questo passaggio, NON presentarlo come una normale frase del dialogo. Rendilo visivamente evidente usando una breve intestazione in grassetto e un'emoji, per esempio:
-
-⭐ **PASSAGGIO FONDAMENTALE — SCEGLIERE LA STRADA GIUSTA** ⭐
-
-Subito sotto, mostra la frase del venditore in modo leggibile e metti in **grassetto** i tre elementi che il cliente deve distinguere:
-**non mi ero spiegato in modo chiarissimo**, **un timore o un'incertezza**, **il prezzo**.
-
-Questo passaggio deve essere chiaramente riconoscibile nella simulazione perché rappresenta il momento in cui il cliente individua una delle TRE strade. [TRE CAREZZE] [DOMANDA A SCELTA]
-
-La domanda deve far comprendere chiaramente al cliente che deve scegliere TRA I TRE ELEMENTI, senza ripeterli nuovamente dopo che il cliente ha indicato la propria scelta.
+La domanda deve far comprendere chiaramente al cliente che deve scegliere TRA I TRE ELEMENTI, senza ripeterli nuovamente dopo che il cliente ha indicato la propria scelta. [DOMANDA A SCELTA]
 
 Dopo che il cliente ha dichiarato quale dei tre elementi è presente, il venditore NON deve ripetere la domanda «quali elementi è meglio che io le chiarisca o le approfondisca?» e NON deve ripetere meccanicamente l'elenco delle tre possibilità.
 
@@ -456,77 +443,32 @@ TIMORE → CHIARIMENTO → DECISIONE → CHIUSURA. [TIMORE → CHIARIMENTO → D
 Solo se il cliente, nonostante la gestione del timore, dichiara esplicitamente di non essere ancora pronto a decidere, la simulazione può arrivare alla conclusione della trattativa senza forzare artificialmente la firma.
 
 --------------------------------------------------
-DOPO LA VERSIONE TIMORE — LE ALTRE DUE VERSIONI
+DOPO LA VERSIONE TIMORE — RIASSUNTO DELLE ALTRE DUE STRADE
 --------------------------------------------------
 
-Dopo aver completato la simulazione principale sul TIMORE / PAURA / INCERTEZZA, NON sviluppare automaticamente le altre due varianti.
+Dopo aver completato la simulazione principale sul TIMORE / PAURA / INCERTEZZA, NON sviluppare e NON proporre altre due simulazioni.
 
-Concludi la simulazione principale.
+Fornisci soltanto un breve riassunto operativo delle altre due possibili strade del «ci devo pensare».
 
-Poi aggiungi una breve sezione:
+1. «NON MI SONO SPIEGATO IN MODO CHIARISSIMO»
 
-«Se vuoi, posso mostrarti anche le altre due versioni del “ci devo pensare”:»
+Se al cliente non è chiaro qualche elemento della proposta, il venditore deve prima considerare che il cliente possa essere stanco e che, nella spiegazione precedente, alcuni passaggi possano essere stati dati per scontati. L'eventuale difficoltà di comprensione non va quindi attribuita automaticamente al cliente: può dipendere da come il venditore ha costruito e spiegato la proposta.
 
-1. «Non mi sono spiegato in modo chiarissimo»
-2. «Prezzo»
+Si riprende la spiegazione SOLO se ci sono elementi concreti da chiarire e se il cliente condivide la possibilità di riprendere l'argomento. Se serve, si valuta anche un nuovo appuntamento, con l'obiettivo di spiegare tutto con maggiore calma e precisione e di portare esempi, casi significativi, numeri, statistiche o altri elementi realmente disponibili. NON inventare dati.
 
-Questa parte serve a offrire al lettore la possibilità di vedere separatamente le altre due modalità.
+Il nuovo appuntamento NON va fissato automaticamente perché il cliente «ci deve pensare»: entra in gioco solo quando esiste una reale necessità di approfondimento e il cliente condivide la ripresa della spiegazione.
 
---------------------------------------------------
-VERSIONE ALTERNATIVA 1 — NON MI SONO SPIEGATO IN MODO CHIARISSIMO
---------------------------------------------------
+2. «PREZZO»
 
-Se il lettore sceglie questa versione, sviluppa una simulazione separata. [NON MI SONO SPIEGATO IN MODO CHIARISSIMO]
-
-Il venditore deve rendere la proposta:
-- più chiara;
-- più precisa;
-- più concreta.
-
-Utilizza, quando disponibili:
-- numeri;
-- statistiche;
-- esempi;
-- casi significativi;
-- elementi concreti della proposta. [ESEMPI / DATI / SUPPORTI]
-
-NON inventare dati.
-
-L'obiettivo è eliminare l'incertezza informativa e accompagnare il cliente alla decisione.
-
-IN QUESTA STRADA IL FOCUS È LA CHIAREZZA DELLA PROPOSTA.
-
-Se il cliente, dopo i chiarimenti, è sufficientemente informato e pronto a decidere, il venditore può chiudere direttamente la trattativa. [CHIUSURA]
-
-Se invece emerge che servono ulteriori spiegazioni, esempi, approfondimenti o elementi concreti che richiedono tempo, il venditore prende EVENTUALMENTE UN ALTRO APPUNTAMENTO. [APPUNTAMENTO SOLO SE NECESSARIO]
-
-Il nuovo appuntamento deve avere un obiettivo preciso:
-
-CHIARIRE MEGLIO LA PROPOSTA ATTRAVERSO ESEMPI, ELEMENTI CONCRETI, NUMERI O SPIEGAZIONI DISPONIBILI.
-
-NON prendere un appuntamento semplicemente perché il cliente «ci deve pensare».
-
-Il nuovo appuntamento viene utilizzato SOLO quando esiste una reale necessità di approfondimento informativo.
-
-Dopo il chiarimento, la trattativa deve essere accompagnata verso la decisione e la chiusura.
-
---------------------------------------------------
-VERSIONE ALTERNATIVA 2 — PREZZO
---------------------------------------------------
-
-Se il lettore sceglie questa versione, passa alla gestione:
+Se il vero motivo è il prezzo, si passa direttamente a:
 
 PROPONGO → DIFENDO → SCENDO → CHIUSURA. [PROPONGO] [DIFENDO] [SCENDO] [CHIUSURA]
 
-Non continuare con altre obiezioni.
+NON trasformare il prezzo in un nuovo «ci devo pensare».
+NON fissare automaticamente un altro appuntamento.
+Dopo SCENDO si va direttamente in CHIUSURA.
 
-NON trasformare il prezzo in «ci devo pensare».
-
-NON prendere un nuovo appuntamento per gestire il prezzo.
-
-Dopo SCENDO vai direttamente in CHIUSURA.
-
-La trattativa deve arrivare alla decisione finale e alla firma, oppure alla conclusione se il cliente decide di non procedere.
+La trattativa arriva alla decisione finale e alla firma, oppure alla conclusione se il cliente decide di non procedere.
 
 --------------------------------------------------
 REGOLE FONDAMENTALI
@@ -543,7 +485,7 @@ REGOLE FONDAMENTALI
 9. Nel PREZZO: PROPONGO → DIFENDO → SCENDO → CHIUSURA.
 10. Nel «CI DEVO PENSARE»: utilizza il METODO DELLE TRE CAREZZE.
 11. Dopo che il cliente ha scelto una delle tre strade, non ripetere l'elenco delle tre possibilità e non tornare automaticamente alla domanda sui «quali elementi».
-12. Solo alla fine della versione TIMORE proponi al lettore le altre due versioni: NON MI SONO SPIEGATO IN MODO CHIARISSIMO e PREZZO.
+12. Solo alla fine della versione TIMORE riassumi come gestire le altre due strade: NON MI SONO SPIEGATO IN MODO CHIARISSIMO e PREZZO. NON svilupparle come simulazioni separate.
 13. La simulazione deve essere realistica e completa.
 14. Distingui sempre chiaramente VENDITORE e CLIENTE.
 15. Non dare voti, punteggi o pagelle.
@@ -585,9 +527,9 @@ Nel caso «CI DEVO PENSARE»:
 - usa un tono confidenziale, amichevole e di sostegno; [ASCOLTO EMPATICO]
 - utilizza AWAY FROM → GO TO e, quando coerente, LIFE TIME VALUE e CONTROESEMPIO; [AWAY FROM → GO TO] [LIFE TIME VALUE] [CONTROESEMPIO]
 - se il timore viene superato, chiudi direttamente la trattativa; [CHIUSURA]
-- solo dopo la conclusione proponi al lettore le altre due versioni;
-- nella versione NON MI SONO SPIEGATO IN MODO CHIARISSIMO, prendi eventualmente un nuovo appuntamento SOLO se servono ulteriori chiarimenti; [APPUNTAMENTO SOLO SE NECESSARIO]
-- nella versione PREZZO, segui PROPONGO → DIFENDO → SCENDO → CHIUSURA senza prendere un nuovo appuntamento. [PROPONGO] [DIFENDO] [SCENDO] [CHIUSURA]
+- solo dopo la conclusione riassumi le altre due strade, senza svilupparle come simulazioni separate;
+- nella strada NON MI SONO SPIEGATO IN MODO CHIARISSIMO, considera anche che il cliente possa essere stanco e che alcuni passaggi siano stati dati per scontati; riprendi la spiegazione SOLO se ci sono elementi concreti da chiarire e il cliente condivide la ripresa; se necessario, valuta un nuovo appuntamento per portare esempi, casi, numeri o altri elementi realmente disponibili;
+- nella strada PREZZO, segui PROPONGO → DIFENDO → SCENDO → CHIUSURA senza prendere automaticamente un nuovo appuntamento. [PROPONGO] [DIFENDO] [SCENDO] [CHIUSURA]
 
 La simulazione termina con la conclusione della trattativa.
 ⓘ   L’AIutino è costruito per allenare la gestione delle obiezioni senza sostituire il venditore.`;
@@ -596,11 +538,12 @@ La simulazione termina con la conclusione della trattativa.
 const fields={io:document.getElementById('io'),cliente:document.getElementById('cliente'),esigenza:document.getElementById('esigenza'),proposta:document.getElementById('proposta')};
 const preview=document.getElementById('preview');
 const btn=document.getElementById('copyBtn');
-function selectedObiezione(){const v=document.querySelector('input[name="obiezione"]:checked').value;return v==='1'?'OBIEZIONE DI PREZZO — «COSTA TROPPO»':'OBIEZIONE DI RIMANDO — «CI DEVO PENSARE»'}
+let obiezioneScelta='1';
+function selectedObiezione(){return obiezioneScelta==='1'?'OBIEZIONE DI PREZZO — «COSTA TROPPO»':'OBIEZIONE DI RIMANDO — «CI DEVO PENSARE»'}
 function getPrompt(){return template.replaceAll('[IO]',fields.io.value.trim()||'[DA INSERIRE]').replaceAll('[POTENZIALE_CLIENTE]',fields.cliente.value.trim()||'[DA INSERIRE]').replaceAll('[ESIGENZA]',fields.esigenza.value.trim()||'[DA INSERIRE]').replaceAll('[PROPOSTA]',fields.proposta.value.trim()||'[DA INSERIRE]').replaceAll('[OBIEZIONE]',selectedObiezione())}
 function refresh(){preview.textContent=getPrompt()}
 Object.values(fields).forEach(el=>el.addEventListener('input',refresh));
-document.querySelectorAll('.option').forEach(el=>el.addEventListener('click',()=>{document.querySelectorAll('.option').forEach(x=>x.classList.remove('active'));el.classList.add('active');el.querySelector('input').checked=true;refresh()}));
+document.querySelectorAll('.option').forEach(el=>{el.addEventListener('click',()=>{obiezioneScelta=el.dataset.obiezione;document.querySelectorAll('.option').forEach(x=>x.classList.remove('active'));el.classList.add('active');refresh()});});
 btn.addEventListener('click',async()=>{if(!fields.io.value.trim()||!fields.cliente.value.trim()||!fields.esigenza.value.trim()||!fields.proposta.value.trim()){alert('Compila tutti i campi iniziali prima di preparare il prompt.');return}const p=getPrompt();try{await navigator.clipboard.writeText(p)}catch(e){const t=document.createElement('textarea');t.value=p;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}btn.textContent='✓  PROMPT COPIATO';setTimeout(()=>btn.textContent='▣  PREPARA E COPIA IL PROMPT',1800)});
 refresh();
 </script>
